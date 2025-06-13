@@ -1,11 +1,11 @@
 import User from "./UserModel.js";
-import gitar from "./gitarmodel.js";
-import bayarGitar from "./bayargitar.js";
+import kursus from "./kursusmodel.js";
+import IkutKursus from "./ikutkursusmodel.js";
 
 // User ↔ IkutKursus
-User.hasMany(bayarGitar, { foreignKey: "idUser", constraints:true, as: "user" });
-bayarGitar.belongsTo(User, { foreignKey: "idUser", constraints:true, as: "user" });
+User.hasMany(IkutKursus, { foreignKey: "idUser", constraints:true, as: "user" });
+IkutKursus.belongsTo(User, { foreignKey: "idUser", constraints:true, as: "user" });
 
 // Kursus ↔ IkutKursus
-gitar.hasMany(bayarGitar, { foreignKey: "idGitar", constraints:true, as: "gitar" });
-bayarGitar.belongsTo(gitar, { foreignKey: "idGitar", constraints:true, as: "gitar" });
+kursus.hasMany(IkutKursus, { foreignKey: "idKursus", constraints:true, as: "kursus" });
+IkutKursus.belongsTo(kursus, { foreignKey: "idKursus", constraints:true, as: "kursus" });

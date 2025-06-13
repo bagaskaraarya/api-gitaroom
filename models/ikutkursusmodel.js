@@ -3,27 +3,27 @@ import db from "../config/Database.js";
 
 // Tidak perlu import User atau kursus jika tidak pakai references langsung
 
-const BayarGitar = db.define("bayargitar", {
+const IkutKursus = db.define("ikutkursus", {
   idUser: {
     type: Sequelize.INTEGER,
     allowNull: false,
   },
-  idGitar: {
+  idKursus: {
     type: Sequelize.INTEGER,
     allowNull: false,
   },
   pembayaran: {
     type: Sequelize.STRING,
     allowNull: false,
-    defaultValue: "E-Wallet",
+    defaultValue: "pending",
   },
   status: {
     type: Sequelize.STRING,
     allowNull: false,
-    defaultValue: "Lunas",
+    defaultValue: "aktif",
   },
 }, {
   freezeTableName: true,
 });
 
-export default BayarGitar;
+export default IkutKursus;

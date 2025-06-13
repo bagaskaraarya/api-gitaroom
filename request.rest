@@ -1,30 +1,26 @@
-### GET ALL USERS
-GET http://localhost:5000/users 
-
-### GET USER BY ID
-GET http://localhost:5000/users/1
-
-### POST USER
+### Create new user 
 POST http://localhost:5000/users 
 Content-Type: application/json
 
 {
-    "name": "Arya Bhagaskara",
-    "email": "bagaskaraarya213@gmail.com",
-    "password": "Male",
-    "alamat": "Purwokerto"
+    "name": "Arya", 
+    "email": "admin@gmail.com", 
+    "gender": "male", 
+    "password": "3123", 
+    "role": "admin"
 }
 
-### EDIT USER
-PUT http://localhost:5000/users/1 
+### Create new course (pakai URL gambar, bukan upload file) 
+POST http://localhost:5000/courses 
 Content-Type: application/json
 
 {
-    "name": "Arya Honocoroko",
-    "email": "bagaskaraarya213@gmail.com",
-    "password": "Male",
-    "alamat": "Purwokerto"
+    "Judul": "Cort AD810",
+    "Guru": "lisa",
+    "Waktu": 6,
+    "harga": 90000,
+    "Img": "https://www.enya-music.com/cdn/shop/products/EnyaX4ProCarbonFiberGuitar2.jpg?v=1744796979&width=1445",
+    "Deskripsi": "Gitar akustik Cort AD810, body dreadnought klasik dengan harga terjangkau dan kualitas baik.",
+    "Kategori": "Gitar Akustik"
 }
 
-### DELETE USER
-DELETE http://localhost:5000/users/1 

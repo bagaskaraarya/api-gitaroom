@@ -2,9 +2,9 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import UserRoute from "./routes/UserRoute.js";
-import bayargitar from "./routes/bayargitar.js";
+import ikutkursus from "./routes/ikutkursus.js";
 import "./models/assosiasi.js";
-import gitarroute from "./routes/gitarroute.js";
+import kursusroute from "./routes/kursusroute.js";
 
 dotenv.config();
 
@@ -20,11 +20,11 @@ app.use(express.json());
 // Routes
 app.get("/", (req, res) => res.render("index"));
 app.use(UserRoute);
-app.use(gitarroute);
-app.use(bayargitar);
+app.use(kursusroute);
+app.use(ikutkursus);
 
-// Jalankan server
+// Listening
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });

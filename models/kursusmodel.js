@@ -1,12 +1,16 @@
 import { Sequelize } from "sequelize";
 import db from "../config/Database.js";
 
-const gitar = db.define("gitar", {
-  NamaGitar: {
+const kursus = db.define("kursus", {
+  Judul: {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  LamaPemakaian: {
+  Guru: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  Waktu: {
     type: Sequelize.INTEGER,
     allowNull: false,
   },
@@ -30,4 +34,4 @@ const gitar = db.define("gitar", {
   freezeTableName: true,  // supaya nama tabelnya pas 'kursus'
 });
 
-export default gitar;
+export default kursus;
